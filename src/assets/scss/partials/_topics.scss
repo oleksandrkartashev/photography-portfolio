@@ -1,0 +1,146 @@
+.topics {
+    padding: 20px 0 40px;
+    @include respond-to("lg") {
+        padding: 40px 0 80px;
+    }
+    @include respond-to("xlg") {
+        padding: 56px 0 112px;
+    }
+    &--wrap {
+        background: var(--secondary-color);
+        padding: 25px;
+        display: flex;
+        flex-direction: column;
+        gap: 0 40px;
+        @include respond-to("lg") {
+            flex-direction: row;
+            flex-wrap: nowrap;
+            padding: 45px;
+        }
+        @include respond-to("xlg") {
+            padding: 65px;
+        }
+    }
+    &--column {
+        width: 100%;
+        &:first-child {
+            @include respond-to("lg") {
+                max-width: var(--topics-column-big-width);
+            }
+        }
+        &:last-child {
+            @include respond-to("lg") {
+                max-width: calc(100% - var(--topics-column-big-width));
+            }
+        }
+        
+    }
+    &-title {
+        grid-area: title;
+        font-size: 26px;
+        color: var(--primary-color);
+        text-transform: uppercase;
+        text-align: center;
+        margin-bottom: 20px;
+        letter-spacing: 0.5px;
+        font-weight: 800;
+        
+        @include respond-to("md") {
+            text-align: initial;
+            margin-bottom: 33px;
+            font-size: 45px;
+            letter-spacing: 1px;
+        }
+
+        @include respond-to("lg") {
+            font-size: 49px;
+            line-height: 1.26;
+            letter-spacing: 6.2px;
+        }
+        @include respond-to("xlg") {     
+            font-size: 54px;
+        }
+        @include respond-to("xxlg") {
+            margin-top: -19px;
+            font-size: 72px;
+            letter-spacing: 7.2px;
+        }
+    }
+    &-content {
+        grid-area: content;
+    }
+    &-list {
+        padding-top: 20px;
+        padding-bottom: 15px;
+        @include respond-to("xxlg") {
+            padding-top: 38px;
+            padding-bottom: 28px;
+        }
+    }
+    .list {
+        display: block;
+        &-item {
+            width: 100%;
+            &:not(:last-child) {
+                a {
+                    border-bottom: 1px solid var(--primary-dark-color);
+                }
+            }
+        }
+        a {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 15px 0;
+            width: 100%;
+
+            color: var(--primary-color);
+            font-weight: 500;
+            font-size: 20px;
+            text-transform: uppercase;
+            transition: 0.3s;
+            letter-spacing: 0.6px;
+
+            &:hover {
+                text-decoration: underline;
+            }
+
+            @include respond-to("md") {
+                padding: 24px 0;
+                font-size: 18px;
+                letter-spacing: 1.8px;
+            }
+            @include respond-to("xlg") {
+                padding: 25px 0;
+                font-size: 19px;
+            }
+            @include respond-to("xxlg") {
+                padding: 32px 0;
+                font-size: 24px;
+                letter-spacing: 2.88px;
+            }
+        }
+    }
+    &-btn {
+        margin-bottom: 10px;
+        @include respond-to("md") {
+            margin-bottom: 31px;
+        }
+    }
+    &-image {
+        &--main {
+            margin: 0;
+            img {
+                width: 100%;
+                line-height: 0;
+            }
+        }
+        &--secondary {
+            margin: 0;
+            img {
+                width: 100%;
+                line-height: 0;
+            }
+        }
+    }
+}

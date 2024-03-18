@@ -1,0 +1,110 @@
+.works {
+    padding: 0 0 32px;
+    @include respond-to("md") {
+        padding: 0 0 56px;
+    }
+    &-title {
+        font-size: 26px;
+        color: var(--primary-white-color);
+        text-transform: uppercase;
+        text-align: center;
+        margin-bottom: 20px;
+        text-align: center;
+        letter-spacing: 1px;
+
+        @include respond-to("md") {
+            font-size: 45px;
+            margin-bottom: 32px;
+            letter-spacing: 2px;
+        }
+
+        @include respond-to("lg") {
+            font-size: 72px;
+            margin-bottom: 56px;
+            letter-spacing: 6.4px;
+        }
+    }
+    .masonry {
+        counter-reset: masonrylist;
+        display: flex;
+        flex-direction: column;
+        @include respond-to("md") {
+            flex-direction: row;
+            justify-content: space-between;
+            flex-wrap: wrap;
+        }
+        &-item {
+            width: 100%;
+            margin-bottom: 30px;
+            @include respond-to("md") {
+                max-width: 34.89%;
+                margin-bottom: 43px;
+            }
+            &:nth-child(1),
+            &:nth-child(3),
+            &:nth-child(4),
+            &:nth-child(6),
+            &:nth-child(7),
+            &:nth-child(9) {
+                @include respond-to("md") {
+                    max-width: 29.2%;
+                }
+            }
+            &:nth-child(4),
+            &:nth-child(6) {     
+                @include respond-to("md") {
+                    margin-top: -20px;
+                }
+                @include respond-to("lg") {
+                    margin-top: -40px;
+                }
+            }
+            &:nth-child(7),
+            &:nth-child(9) {
+                @include respond-to("md") {
+                    margin-top: -70px;
+                }
+                @include respond-to("lg") {
+                    margin-top: -157px;
+                }
+            }
+            figure {
+                margin: 0;
+            }
+            img {
+                width: 100%;
+            }
+            figcaption {
+                position: relative;
+                padding: 11px 0 0 44px;
+                font-weight: 400;
+                font-size: 16px;
+                text-transform: uppercase;
+                letter-spacing: 0.6px;
+                line-height: 1.2;
+                @include respond-to("lg") {
+                    font-size: 20px;
+                    padding: 11px 0 0 59px;
+                    letter-spacing: 1.92px;
+                    line-height: 1.4;
+                }
+                &:before {
+                    position: absolute;
+                    top: 13px;
+                    left: 0;
+                    font-size: inherit;
+                    color: inherit;
+                    counter-increment: masonrylist;
+                    content: "0" counter(masonrylist) "/";
+                    font-size: 16px;
+                }
+            }
+        }
+    }
+    &--wrap {
+        text-align: center;
+    }
+}
+
+
+

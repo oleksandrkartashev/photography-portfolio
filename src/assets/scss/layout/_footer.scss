@@ -1,0 +1,52 @@
+.footer {
+    position: relative;
+    background: transparent;
+    padding-top: 25px;
+    @include respond-to("md") {
+        padding-top: 56px;
+    }
+    &--wrap {
+        display: flex;
+        align-items: center;
+        padding: 20px 0 15px;
+        border-top: 1px solid var(--primary-white-color);
+        @include respond-to("md") {
+            padding: 43px 0 25px;
+        }
+    }
+    &-nav {
+        display: none;
+        @include respond-to("md") {
+            display: flex;
+        }
+    }
+    &-logo {
+        display: block;
+        line-height: 0;
+        max-width: 120px;
+        margin-right: 10px;
+        @include respond-to("md") {
+            max-width: 160px;
+        }
+    }
+    &-privacy {
+        margin-left: auto;
+
+        color: var(--primary-white-color);
+        font-weight: 400;
+        font-size: 20px;
+        text-transform: uppercase;
+        transition: 0.3s;
+        letter-spacing: 0.6px;
+
+        &:hover {
+            color: var(--secondary-color);
+        }
+
+        @include respond-to("md") {
+            margin: 0;
+            margin-left: 10px;
+            letter-spacing: 0.6px;
+        }
+    }
+}

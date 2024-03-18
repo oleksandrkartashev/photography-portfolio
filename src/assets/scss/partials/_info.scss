@@ -1,0 +1,33 @@
+.info {
+    color: var(--primary-white-color);
+    &--wrap {
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        padding: 32px 0;
+        border: 1px solid var(--primary-white-color);
+        border-width: 1px 0;
+        @include respond-to("md") {
+            flex-direction: row;
+            justify-content: space-between;
+        }
+    }
+    span {
+        font-weight: 400;
+        font-size: 20px;
+        text-transform: uppercase;
+        cursor: pointer;
+        letter-spacing: 0.6px;
+        @include respond-to("md") {
+            letter-spacing: 2.4px;
+        }
+        &:not(:last-child) {
+            margin-bottom: 10px;
+        }
+        @include respond-to("md") {
+            &:not(:last-child) {
+                margin-bottom: 0px;
+            }
+        }
+    }
+}

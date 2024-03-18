@@ -1,0 +1,180 @@
+.btn {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 500;
+    line-height: normal;
+    white-space: nowrap;
+    text-transform: uppercase;
+    text-decoration: none;
+    border: none;
+    border-radius: 56px;
+    outline: none;
+    transition: 0.3s all;
+    letter-spacing: 0.6px;
+    @include respond-to("lg") {
+        font-size: 20px;
+        letter-spacing: 1.92px;
+    }
+
+    &:hover,
+    &:focus {
+        text-decoration: none;
+        outline: none;
+    }
+    
+    &--primary {
+        color: var(--primary-white-color);
+        background-color: var(--primary-color);
+        border-color: var(--primary-color);
+        svg {
+            fill: var(--primary-white-color);
+        }
+        &:hover {
+            color: var(--primary-color);
+            svg {
+                fill: var(--primary-color);
+            }
+            background-color: var(--primary-white-color);
+            border-color: var(--primary-white-color);
+        }
+    }
+
+    &--secondary {
+        color: var(--primary-color);
+        background-color: var(--primary-white-color);
+        border-color: var(--primary-white-color);
+        svg {
+            fill: var(--primary-color);
+        }
+        &:hover {
+            color: var(--primary-color);
+            background-color: var(--secondary-color);
+            border-color: var(--secondary-color);
+        }
+    }
+
+    &--thirdary {
+        color: var(--primary-white-color);
+        background: transparent;
+        border-color: transparent;
+        font-weight: 400;
+        svg {
+            fill: var(--primary-white-color);
+        }
+        &:hover {
+            color: var(--secondary-color);
+            svg {
+                fill: var(--secondary-color);
+            }
+        }
+    }
+
+    &--icon {
+        svg {
+            width: 24px;
+            height: 24px;
+        }
+    }
+
+    &--sm {
+        font-size: 16px;
+        svg {
+            margin-left: 8px;
+        }
+    }
+
+    &--md {
+        padding: 12px 18px;
+        font-size: 17px; 
+
+        @include respond-to("lg") {
+            padding: 15px 30px; 
+            font-size: 18px;
+        }
+        svg {
+            margin-left: 16px;
+        }
+    }
+
+    &--lg {
+        padding: 15px 30px; 
+        font-size: 18px;
+
+        @include respond-to("lg") {
+            padding: 20px 40px;
+            font-size: 20px;
+        }
+        svg {
+            margin-left: 16px;
+        }
+    }
+
+    
+
+    &--toggle {
+        position: relative;
+        display: block;
+        width: 30px;
+        height: 20px;
+        background: transparent;
+        cursor: pointer;
+        transition: all 0.2s ease-out;
+
+        @include respond-to("md") {
+            display: none;
+        }
+
+        i {
+            position: absolute;
+            top: 9px;
+            left: 0;
+            display: block;
+            width: 30px;
+            height: 2px;
+            background: var(--primary-white-color);
+            transition: all 0.2s ease-out;
+        }
+
+        &::before,
+        &::after {
+            position: absolute;
+            left: 0;
+            display: block;
+            width: 30px;
+            height: 2px;
+            background: var(--primary-white-color);
+            transition: all 0.2s ease-out;
+            content: "";
+        }
+
+        &::before {
+            top: 0;
+        }
+
+        &::after {
+            top: 18px;
+        }
+    }
+
+    &--toggle--active {
+        i {
+            opacity: 0;
+        }
+
+        &::before,
+        &::after {
+            top: 9px;
+        }
+
+        &::before {
+            transform: rotate(45deg);
+        }
+
+        &::after {
+            transform: rotate(-45deg);
+        }
+    }
+
+}

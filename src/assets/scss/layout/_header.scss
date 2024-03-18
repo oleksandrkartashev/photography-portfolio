@@ -1,0 +1,31 @@
+.header {
+    position: relative;
+    background: transparent;
+    &--wrap {
+        display: flex;
+        align-items: center;
+        padding: 20px 0 15px;
+        border-bottom: 1px solid var(--primary-white-color);
+        @include respond-to("md") {
+            padding: 43px 0 25px;
+        }
+    }
+    &-logo {
+        display: block;
+        line-height: 0;
+        max-width: 120px;
+        margin-right: 10px;
+        @include respond-to("md") {
+            max-width: 160px;
+        }
+    }
+    &-btn {
+        order: 2;
+        margin-left: auto;
+        @include respond-to("md") {
+            margin: 0;
+            order: 0;
+            margin-left: 10px;
+        }
+    }
+}
